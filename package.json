@@ -1,0 +1,50 @@
+{
+  "name": "angular-to-flutter-portal",
+  "version": "1.0.0",
+  "description": "🎭 A funny Angular+Electron app — Milan's team migrates Angular to Flutter!",
+  "main": "dist-electron/main.js",
+  "scripts": {
+    "start": "ng serve --open",
+    "electron:dev": "concurrently \"ng serve\" \"wait-on http://localhost:4200 && electron .\"",
+    "build": "ng build --configuration production",
+    "build:electron": "npm run build && electron-builder",
+    "electron:compile": "tsc -p tsconfig.electron.json",
+    "lint": "ng lint",
+    "test": "ng test"
+  },
+  "dependencies": {
+    "@angular/animations": "^17.3.0",
+    "@angular/cdk": "^17.3.0",
+    "@angular/common": "^17.3.0",
+    "@angular/compiler": "^17.3.0",
+    "@angular/core": "^17.3.0",
+    "@angular/forms": "^17.3.0",
+    "@angular/material": "^17.3.0",
+    "@angular/platform-browser": "^17.3.0",
+    "@angular/platform-browser-dynamic": "^17.3.0",
+    "@angular/router": "^17.3.0",
+    "@ngrx/effects": "^17.2.0",
+    "@ngrx/store": "^17.2.0",
+    "@ngrx/store-devtools": "^17.2.0",
+    "highlight.js": "^11.9.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.6.0",
+    "zone.js": "~0.14.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^17.3.0",
+    "@angular/cli": "^17.3.0",
+    "@angular/compiler-cli": "^17.3.0",
+    "@types/node": "^20.0.0",
+    "adm-zip": "^0.5.10",
+    "concurrently": "^8.2.2",
+    "csv-parser": "^3.0.0",
+    "electron": "^29.0.0",
+    "electron-builder": "^24.13.0",
+    "electron-store": "^8.2.0",
+    "js-yaml": "^4.1.0",
+    "mammoth": "^1.7.0",
+    "typescript": "~5.4.0",
+    "wait-on": "^7.2.0"
+  }
+}
