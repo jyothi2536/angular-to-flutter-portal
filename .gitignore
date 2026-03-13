@@ -1,0 +1,27 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# Angular
+dist/
+.angular/
+out-tsc/
+
+# Electron
+dist-electron/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Environment
+.env
+*.env.local
