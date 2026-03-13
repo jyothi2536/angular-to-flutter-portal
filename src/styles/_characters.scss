@@ -1,0 +1,6 @@
+.character-avatar { display: inline-flex; flex-direction: column; align-items: center; gap: 4px; }
+.character-avatar .avatar-emoji { border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px solid; }
+.character-avatar.sm .avatar-emoji { width: 40px; height: 40px; font-size: 1.2rem; }
+.character-avatar.md .avatar-emoji { width: 60px; height: 60px; font-size: 1.8rem; }
+.character-avatar.lg .avatar-emoji { width: 80px; height: 80px; font-size: 2.4rem; }
+.character-avatar .avatar-name { font-size: 0.7rem; color: #94A3B8; text-align: center; }

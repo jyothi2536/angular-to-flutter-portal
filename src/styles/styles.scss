@@ -1,0 +1,12 @@
+@import 'variables';
+@import 'animations';
+@import 'theme';
+@import 'characters';
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; background: #0F0F1A; color: #F1F5F9; font-family: 'Roboto', sans-serif; overflow: hidden; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #1A1A2E; }
+::-webkit-scrollbar-thumb { background: #7C3AED; border-radius: 3px; }
+.gradient-text { background: linear-gradient(135deg, #7C3AED, #2563EB, #10B981); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.card { background: #16213E; border-radius: 16px; border: 1px solid rgba(255,255,255,0.08); padding: 24px; }
+.pulse-btn { animation: pulse 2s infinite; background: linear-gradient(135deg, #7C3AED, #2563EB) !important; color: white !important; font-weight: 700 !important; font-size: 1.1rem !important; padding: 16px 32px !important; border-radius: 50px !important; border: none !important; cursor: pointer; }
