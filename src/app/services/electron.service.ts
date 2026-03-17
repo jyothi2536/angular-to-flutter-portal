@@ -24,7 +24,15 @@ export class ElectronService {
   selectFolder() { return this.isElectron() ? this.api.selectFolder() : Promise.resolve(null); }
   saveConfig(config: object) { return this.isElectron() ? this.api.saveConfig(config) : Promise.resolve({ success: true }); }
   uploadFile(filePath: string, destName: string) { return this.isElectron() ? this.api.uploadFile(filePath, destName) : Promise.resolve({ success: true, path: filePath }); }
-  parseAllFiles() { return this.isElectron() ? this.api.parseAllFiles() : Promise.resolve({ routes: 47, apis: 203, models: 38, components: 127, testCases: 847, warnings: ['Auth flow unclear', '3 duplicate API endpoints'], errors: [] }); }
+  parseAllFiles() {
+    return this.isElectron()
+      ? this.api.parseAllFiles()
+      : Promise.resolve({
+          routes: 47, apis: 203, models: 38, components: 127, testCases: 847,
+          warnings: ['Auth flow unclear', '3 duplicate API endpoints'],
+          errors: [],
+        });
+  }
   startGeneration() { return this.isElectron() ? this.api.startGeneration() : Promise.resolve({ success: true }); }
   onGenerationProgress(cb: (data: { step: number; message: string; percent: number }) => void) { if (this.isElectron()) this.api.onGenerationProgress(cb); }
   onGenerationComplete(cb: (data: { filesGenerated: number; linesOfCode: number; timeTaken: number; testFiles: number; apisIntegrated: number; widgetsCreated: number }) => void) { if (this.isElectron()) this.api.onGenerationComplete(cb); }
