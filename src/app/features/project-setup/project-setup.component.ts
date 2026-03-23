@@ -48,6 +48,10 @@ interface TeamMember {
               <mat-option value="3.13">Flutter 3.13</mat-option>
             </mat-select>
           </mat-form-field>
+          <div class="date-field full-width">
+            <label class="date-label">📅 Target Completion Date</label>
+            <input type="date" [(ngModel)]="targetDate" [min]="today" class="date-input">
+          </div>
         </div>
 
         <div class="card">
@@ -123,12 +127,22 @@ interface TeamMember {
     .milan-note { background: rgba(220,38,38,0.1); border: 1px solid rgba(220,38,38,0.3); border-radius: 10px; padding: 12px 16px; font-size: 13px; color: #FCA5A5; font-style: italic; flex: 1; }
     .begin-btn { background: linear-gradient(135deg, #7C3AED, #2563EB) !important; color: white !important; font-size: 16px !important; font-weight: 700 !important; padding: 12px 32px !important; border-radius: 12px !important; height: auto !important; }
     .begin-btn:disabled { opacity: 0.5; }
+    .date-field { margin-bottom: 16px; }
+    .date-label { display: block; font-size: 13px; color: #94A3B8; margin-bottom: 6px; }
+    .date-input { width: 100%; background: transparent; border: 1px solid rgba(124,58,237,0.3); border-radius: 4px; padding: 12px 14px; color: #F1F5F9; font-size: 14px; box-sizing: border-box; color-scheme: dark; }
+    .date-input:focus { outline: none; border-color: #7C3AED; }
+    .date-input::-webkit-calendar-picker-indicator { filter: invert(0.7); cursor: pointer; }
   `]
 })
 export class ProjectSetupComponent {
   projectName = '';
   githubUrl = '';
   flutterVersion = '3.19';
+  targetDate = '';
+
+  get today(): string {
+    return new Date().toISOString().split('T')[0];
+  }
 
   team: TeamMember[] = [
     { name: 'Milan', emoji: '👨‍💼', color: '#DC2626', role: 'Tech Lead', selected: true },
@@ -155,6 +169,7 @@ export class ProjectSetupComponent {
       projectName: this.projectName,
       githubUrl: this.githubUrl,
       flutterVersion: this.flutterVersion,
+      targetDate: this.targetDate,
       team: this.team.filter(m => m.selected).map(m => m.name),
       options: this.options,
     });
